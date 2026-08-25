@@ -1,0 +1,300 @@
+/* ── Mihrab tokens — mirrored from waqtazan.com so the guide reads as a sibling
+   property, not a detached microsite. Light values on :root, dark swapped
+   under prefers-color-scheme. ───────────────────────────────────────────── */
+:root {
+  --stone: #f1ebe0;
+  --surface: #f8f4ec;
+  --ink: #2b2622;
+  --ink-2: #6b6158;
+  --gold: #ae8a52;
+  --line: #e0d6c6;
+  --now: #2e7d5b;
+  --radius: 12px;
+  --measure: 68ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --stone: #1c1917;
+    --surface: #24211e;
+    --ink: #efe8dd;
+    --ink-2: #a99e91;
+    --gold: #d9b87c;
+    --line: #3a342e;
+    --now: #5fb98d;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-readex), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.wrap {
+  max-inline-size: var(--measure);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.site-header {
+  border-block-end: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-mark {
+  color: var(--gold);
+  flex: none;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.site-header nav a {
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: var(--gold);
+}
+
+main {
+  padding-block: 2.5rem 3.5rem;
+}
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+h1,
+h2,
+h3 {
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.15rem);
+  margin-block: 0 0.5rem;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+  margin-block: 2.75rem 0.75rem;
+  padding-block-end: 0.6rem;
+  border-block-end: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 1.06rem;
+  margin-block: 1.75rem 0.4rem;
+  color: var(--gold);
+}
+
+p {
+  margin-block: 0 1.1rem;
+}
+
+a {
+  color: var(--gold);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* ── Components ─────────────────────────────────────────────────────────── */
+.lede {
+  font-size: 1.08rem;
+  color: var(--ink-2);
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  margin-block-end: 1.75rem;
+}
+
+.rule {
+  border: 0;
+  border-block-start: 1px solid var(--line);
+  margin-block: 2.5rem;
+}
+
+.card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 1.35rem 1.5rem;
+  margin-block-end: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--gold);
+}
+
+.card h2 {
+  font-size: 1.12rem;
+  margin: 0 0 0.4rem;
+  border: 0;
+  padding: 0;
+  color: var(--ink);
+}
+
+.card p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.card-meta {
+  display: block;
+  margin-block-start: 0.7rem;
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+
+blockquote {
+  margin: 1.75rem 0;
+  padding: 1.1rem 1.35rem;
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+blockquote p {
+  margin: 0;
+}
+
+.ayah {
+  font-size: 1.12rem;
+  line-height: 2.1;
+}
+
+.ayah cite {
+  display: block;
+  margin-block-start: 0.6rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--ink-2);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin-block: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+table {
+  border-collapse: collapse;
+  inline-size: 100%;
+  font-size: 0.92rem;
+  background: var(--surface);
+}
+
+th,
+td {
+  padding: 0.65rem 0.9rem;
+  text-align: start;
+  border-block-end: 1px solid var(--line);
+}
+
+th {
+  font-weight: 600;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-block-end: 0;
+}
+
+ul,
+ol {
+  padding-inline-start: 1.4rem;
+  margin-block: 0 1.1rem;
+}
+
+li {
+  margin-block-end: 0.45rem;
+}
+
+/* Degree readings and Latin figures must not be reordered by the RTL run. */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+.callout {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 1.15rem 1.4rem;
+  margin-block: 1.75rem;
+}
+
+.callout strong {
+  color: var(--gold);
+}
+
+.callout p:last-child {
+  margin-block-end: 0;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+.site-footer {
+  border-block-start: 1px solid var(--line);
+  background: var(--surface);
+  padding-block: 2rem;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+}
+
+.site-footer p {
+  margin-block-end: 0.5rem;
+}
+
+.site-footer a {
+  color: var(--gold);
+}
